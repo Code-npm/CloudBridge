@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+     <div class="main">
+        <div class="nav">
+            <h1>CloudBridge</h1>
+            <div class="links">
+                <a href="#main-live">LIVE-DATA</a>
+                <a href="#healthfacts">FACTS</a>
+                <a href="#store">STORE</a>
+            </div>
+        </div>
+        <h2>“Your Food’s Freshness, <br> Now Smartly Monitored.”</h2>
+        <img src="/static/image.png" alt="">
+        <h6>Track freshness, prevent waste, and make healthy choices —<br> powered by smart sensors and IoT</h6>
+        <button class="btn"> <a href="#main-live"> Check Live Report</button></a>
+</div>
+<hr>
+<div id="healthfacts">
+
+    <h1 class="head-facts">Health Facts</h1>
+    <div class="carousel">
+        <div class="carousel-track">
+        <div class="fact-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="" class="fact-img">
+        <h2 >"Brain & Mental Health"</h2>
+        <p class="main-fact">Your brain changes physically every time you learn something new — this is called neuroplasticity."</p>
+    </div>
+    <div class="fact-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2966/2966489.png", alt="" class="fact-img">
+        <h2 > "Heart Health"</h2>
+        <p class="main-fact">A brisk 20-minute walk can immediately improve your blood vessel function."</p>
+    </div>
+    <div class="fact-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png" alt="" class="fact-img">
+        <h2 >"Nutrition & Metabolism"</h2>
+        <p class="main-fact">"Balanced protein intake (20–30g per meal) supports muscle growth and repair."</p>
+    </div>
+    <div class="fact-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/4326/4326670.png" alt="" class="fact-img">
+        <h2 >"Respiratory Health"</h2>
+        <p class="main-fact">"Indoor air can be 2–5× more polluted than outdoor air."</p>
+    </div>
+    <div class="fact-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2723/2723651.png" alt="" class="fact-img">
+        <h2 >"Physical Fitness"</h2>
+        <p class="main-fact">"After 30, you lose up to 5% of muscle mass per decade if inactive."</p>
+    </div>
+    <div class="fact-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3063/3063822.png"alt="" class="fact-img">
+        <h2 > "Hormones & Balance"</h2>
+        <p class="main-fact">"Your body’s hormones follow a daily rhythm — disrupted by late-night screen exposure."</p>
+    </div>
+     
+    </div>
+</div>
+
+</div>
+<div id="main-live">
+    <div class="nav-live">
+        <h1>🌡️ Live Environment Data
+</h1>
+    </div>
+    <hr>
+    <div class="data-live">
+    <div id="food-analysis">
+    
+    </div>
+        <div class="info-live">
+            <div class="temp"><p>Temperature <h5 id="temp" class="text-center">--</h5></p></div>
+            <div class="hum"><p>Humidity <h5 id="hum" class="text-center">--</h5></p></div>
+            <div class="air"><p>Air Quality<h5 id="air" class="text-center">--</h5></p></div>
+            
+        </div>
+        <div class="info-live2">
+            <p><h5 id="status" style="font-size: 1.2rem ;"></h5></p>
+            <p><h5 id="reason" style="font-size: 1.2rem ;"></h5></p>
+        </div>
+
+    </div>
+</div>
+
+<div id="store">
+    <h1></h1> </h1>
+</div>
+
+
+<div id="main-aim">
+    <h1 class="aim">Our Aim</h1>
+    <diva class="aim-info">
+        <img src="https://i.pinimg.com/1200x/a9/9b/8f/a99b8fc87bbf4f629efbafef6836df4a.jpg" alt="">
+        <h5>Our project aims to create an IoT-powered food freshness detector that monitors the quality of stored food in real time.
+By tracking temperature, humidity, and gas levels, the system can sense early signs of spoilage.
+It sends instant alerts to users through a connected website.
+This smart solution helps in reducing food waste and maintaining freshness efficiently.</h5>
+        <img src="https://i.pinimg.com/1200x/42/70/5b/42705b6a3ca825f7b4716207d9903127.jpg" alt="">
+    </div>
+</div>
+
+<script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+
+<script>
+const socket = io();
+    socket.on('sensor_data', (data) => {
+      document.getElementById('temp').textContent = data.temperature.toFixed(1);
+      document.getElementById('hum').textContent = data.humidity.toFixed(1);
+      document.getElementById('air').textContent = data.air.toFixed(1);
+
+    });
+    socket.on('result_text' , results =>{
+        document.getElementById('status').textContent=results.status;
+        document.getElementById('reason').textContent=results.reason;
+
+    })
+    
+
+
+
+  </script>
+<!-- <script src="/static/script.js"></script> -->
+</body>
+</html>
