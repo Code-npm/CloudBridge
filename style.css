@@ -1,0 +1,358 @@
+/* ===================== BASE STYLES ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+.main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===================== NAVBAR ===================== */
+.nav {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 2%;
+  width: 100%;
+  height: 10%;
+  background: linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0.418), rgba(0,0,0,0.603));
+  z-index: 2;
+}
+.nav h1 {
+  color: #4e6b20;
+  -webkit-text-stroke: 1px rgba(10,10,10,0.884);
+  font-size: 3.4rem;
+}
+.links {
+  padding-right: 4%;
+}
+.links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  margin: 0 20px;
+  background-color: #4e6b20ef;
+  padding: 7px 15px;
+  border-radius: 20px;
+  border: 2px solid #666;
+}
+.links a:hover {
+  background: rgba(255,255,255,0.788);
+  color: #4e6b20;
+  border: 1px solid #4e6b20;
+}
+button a{
+  text-decoration: none;
+  color: whitesmoke;
+}
+button a:hover{
+  color: #4e6b20;
+}
+
+/* ===================== HERO SECTION ===================== */
+.main{
+  position: relative;
+}
+.main h2 {
+  position: absolute;
+  top: 35%;
+  left: 5%;
+  font-size: 3.2rem;
+  color: #222;
+}
+.main h6 {
+  position: absolute;
+  top: 55%;
+  left: 5%;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #444;
+  max-width: 500px;
+  line-height: 1.4;
+}
+button {
+  position: absolute;
+  color: white;
+  border: none;
+  background-color: #4e6b20;
+  top: 70%;
+  left: 5%;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  padding: 12px 25px;
+  cursor: pointer;
+  z-index: 4;
+}
+button:hover {
+  background: rgba(240, 248, 255, 0.788);
+  color: #4e6b20;
+  border: 1px solid #4e6b20;
+}
+
+/* ===================== FACTS SECTION ===================== */
+.head-facts{
+  background-color: #4e6b20;
+  text-align: center;
+  color: white;
+  font-size: 2.4rem;
+}
+.carousel {
+  overflow: hidden;
+  background-color: #4e6b20;
+  padding: 30px 0;
+  box-shadow: inset 2px 2px 10px #222;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scroll 20s linear infinite; /* 🔹 speed control */
+}
+
+.fact-card {
+  flex: 0 0 250px;
+  background-color: rgb(216, 213, 206);
+  border: 2px solid #444;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px #222;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Animation */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* moves half the total width since duplicated */
+  }
+}
+
+
+.fact-img {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: 0 auto 10px;
+}
+.fact-card h2 {
+  font-size: 2.2rem;
+  color: #333;
+  text-align: center;
+}
+.main-fact {
+  margin: 20px 0;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.fact-card h6 {
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid #555;
+  background-color: #4e6b20;
+  color: rgb(29, 27, 27);
+  padding: 10px;
+  box-shadow: 2px 2px 10px black;
+}
+
+/* ===================== AIM SECTION ===================== */
+#main-aim {
+  background-color: #EEEBE4;
+  padding: 60px 20px;
+}
+.aim {
+  font-size: 4.5rem;
+  color: #4e6b20;
+  text-align: center;
+  -webkit-text-stroke: 2px #333;
+  margin-bottom: 20px;
+}
+.aim-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.aim-info img {
+  width: 280px;
+  height: 280px;
+  border: 2px solid #4e6b20;
+  border-radius: 40px;
+}
+.aim-info h5 {
+  width: 40%;
+  min-width: 250px;
+  font-size: 1.2rem;
+  color: #440f02;
+  border-radius: 30px;
+  padding: 25px;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* ===================== LIVE SECTION ===================== */
+#main-live {
+  padding: 100px 20px;
+  background-color: #EEEBE4;
+}
+.nav-live{
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.2rem;color: #440f02;
+}
+.info-live2{
+  display: block;
+  margin: auto;
+  border: 2px solid #4e6b20;
+  background-color: white;
+  height: 30px;
+  padding: 20px;
+  margin:20px 0px ;
+  border-radius: 30px;
+}
+.info-live  {
+  display: flex;
+  justify-content: center;
+
+}
+.temp , .hum , .air{
+  margin: 20px;
+  padding: 20px;
+  background-color: #4e6b20;
+  color: white;
+width: 100px;
+  height: 50px;
+  border: 2px solid #4e6b20;
+  border-radius: 20px;
+}
+.temp:hover , .hum:hover , .air:hover{
+  background-color: white;
+  color: #4e6b20;
+}
+
+/* ===================== FOOTER ===================== */
+footer {
+  background-color: #4e6b20;
+  text-align: center;
+  color: white;
+  padding: 15px;
+}
+
+/* ===================== MEDIA QUERIES ===================== */
+
+/* Large tablets / small laptops (≤ 1024px) */
+@media (max-width: 1024px) {
+  .nav h1 {
+    font-size: 2.5rem;
+  }
+  .links a {
+    margin: 0 10px;
+    padding: 6px 10px;
+  }
+  .main h2 {
+    font-size: 2.2rem;
+  }
+  .main h6 {
+    font-size: 1rem;
+    width: 70%;
+  }
+  button {
+    font-size: 1rem;
+    top: 60%;
+  }
+  .fact-card {
+    flex: 1 1 80%;
+  }
+}
+
+/* Tablets (≤ 768px) */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 10px 0;
+    gap: 10px;
+  }
+  .main h2 {
+    font-size: 1.8rem;
+  }
+  .main h6 {
+    font-size: 0.9rem;
+    width: 90%;
+  }
+  button {
+    left: 10%;
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+  .fact-card {
+    width: 90%;
+  }
+  .aim {
+    font-size: 3rem;
+  }
+  .aim-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .aim-info h5 {
+    width: 80%;
+    font-size: 1rem;
+  }
+}
+
+/* Phones (≤ 480px) */
+@media (max-width: 480px) {
+  .nav h1 {
+    font-size: 1.8rem;
+  }
+  .links a {
+    display: block;
+    margin: 10px 0;
+  }
+  .main h2 {
+    font-size: 1.4rem;
+  }
+  .main h6 {
+    font-size: 0.8rem;
+    width: 90%;
+  }
+  button {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+  .fact-card h2 {
+    font-size: 1.5rem;
+  }
+  .main-fact {
+    font-size: 1rem;
+  }
+  .aim {
+    font-size: 2rem;
+  }
+  .aim-info img {
+    width: 200px;
+    height: 200px;
+  }
+  .aim-info h5 {
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+  footer {
+    font-size: 0.9rem;
+  }
+}
